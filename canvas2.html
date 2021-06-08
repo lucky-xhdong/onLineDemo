@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>onLine</title>
+    <script src="./js/jquery-1.10.2.js"></script>
+    <script src="./js/canvas2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".demo").onLine({
+                regainCanvas: true
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="demo">
+        <div class="app-main">
+            <ul class="img-list">
+                <li class="list-item" style="background-color: antiquewhite;">
+                    <canvas ref="canvas" class="img-canvas" width="180" height="180"></canvas>
+                </li>
+                <li class="list-item" style="background-color: aqua;">
+                    <canvas ref="canvas" class="img-canvas" width="180" height="180"></canvas>
+                </li>
+                <li class="list-item" style="background-color: cadetblue;">
+                    <canvas ref="canvas" class="img-canvas" width="180" height="180"></canvas>
+                </li>
+                <li class="list-item" style="background-color: tan;">
+                    <canvas ref="canvas" class="img-canvas" width="180" height="180"></canvas>
+                </li>
+            </ul>
+            <ul class="txt-list">
+                <!--右侧-->
+                <li class="list-item">
+                    <p class="txt">A.Nice to meet you, too</p>
+                </li>
+                <li class="list-item">
+                    <p class="txt">B.Nice to meet you, too</p>
+                </li>
+                <li class="list-item">
+                    <p class="txt">C.Nice to meet you, too</p>
+                </li>
+                <li class="list-item">
+                    <p class="txt">D.Nice to meet you, too</p>
+                </li>
+            </ul>
+            <!-- -->
+            <canvas class="canvas"></canvas>
+            <canvas class="backcanvas"></canvas>
+        </div>
+    </div>
+    <style>
+    .app-main {
+        position: relative;
+    }
+    .app-main ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .app-main ul li{ 
+        flex: 1;
+        margin: 0 5px;
+        height: 100px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .app-main ul.txt-list {
+        margin-top: 50px;
+    }
+    .app-main ul.txt-list li {
+        white-space: pre-wrap;
+        background-color: #f0f0f0;
+        padding: 10px;
+    }
+    .app-main ul.txt-list li .txt {
+        line-height: 30px;
+        font-size: 16px;
+        color: #666;
+        display: block;
+    }
+    .app-main .frontCanvas,
+    .app-main .backCanvas { 
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .app-main .frontCanvas {
+        z-index: -1;
+    }
+    .app-main .backCanvas {
+        z-index: -2;
+    }
+    </style>
+
+</body>
+
+</html>
